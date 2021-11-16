@@ -13,9 +13,15 @@ function makeCard(greeting, celebration, msg) {
 	document.querySelector("#card_title").textContent = greeting;
 	document.querySelector("#card_msg").textContent = msg;
 
+	const imgtag = document.querySelector("#cardimg");
+	const imgurl = `./static/images/${celebration}.jpg`;
+	imgtag.setAttribute("src", imgurl);
+	imgtag.setAttribute("alt", celebration);
+
 	document.querySelector(".card").style.display = "block";
 	document.querySelector("#my-form").style.display = "none";
 	document.querySelector("#back").style.display = "block";
+	document.querySelector("h1").style.display = "none";
 }
 
 module.exports = { handleFormSubmit };
